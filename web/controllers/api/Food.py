@@ -91,7 +91,7 @@ def foodInfo():
     food_info = Food.query.filter_by( id = id ).first()
     if not food_info or not food_info.status :
         resp['code'] = -1
-        resp['msg'] = "美食已下架"
+        resp['msg'] = "房间已下架"
         return jsonify(resp)
 
     member_info = g.member_info

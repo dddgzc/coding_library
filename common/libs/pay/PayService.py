@@ -68,7 +68,7 @@ class PayService():
                     continue
 
                 if int( item['number'] ) > int( tmp_left_stock ):
-                    raise Exception( "您购买的这美食太火爆了，剩余：%s,你购买%s~~"%( tmp_left_stock,item['number'] ) )
+                    raise Exception( "您购买的这房间，剩余：%s,你购买%s~~"%( tmp_left_stock,item['number'] ) )
 
                 tmp_ret = Food.query.filter_by( id = item['id'] ).update({
                     "stock":int(tmp_left_stock) - int(item['number'])
